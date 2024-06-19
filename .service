@@ -1,0 +1,12 @@
+[Unit]
+Description=Git Daemon Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/git daemon --reuseaddr --base-path=/path/to/your/project --export-all --verbose
+Restart=always
+User=git
+Group=git
+
+[Install]
+WantedBy=multi-user.target
